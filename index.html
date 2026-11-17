@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Debosmita Jana | CS Student & Developer</title>
+  <meta name="description" content="Portfolio of Debosmita Jana, 2nd year B.Tech Computer Science student at Shoolini University. Projects, skills and contact." />
+  <meta name="author" content="Debosmita Jana" />
+  <meta property="og:title" content="Debosmita Jana | Portfolio" />
+  <meta property="og:description" content="2nd year B.Tech CSE student at Shoolini University with a diploma in Computer Science & Technology." />
+  <meta property="og:image" content="assets/profile.jpg" />
+  <meta name="theme-color" content="#0b0f1a" />
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <!-- Scroll progress + cursor glow -->
+  <div class="progress-bar" id="progressBar"></div>
+  <div class="cursor-glow" id="cursorGlow" aria-hidden="true"></div>
+
+  <!-- ============ NAVBAR ============ -->
+  <header class="navbar" id="navbar">
+    <a href="#home" class="logo">&lt;DJ /&gt;</a>
+    <nav>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#home" class="active">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#journey">Journey</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="nav-actions">
+      <button class="icon-btn" id="themeToggle" aria-label="Toggle light / dark theme">
+        <span class="sun">☀️</span><span class="moon">🌙</span>
+      </button>
+      <button class="icon-btn hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <!-- ============ HERO ============ -->
+    <section class="hero" id="home">
+      <div class="hero-text reveal">
+        <p class="hello">👋 Hi there, I'm</p>
+        <h1>Debosmita <span class="gradient-text">Jana</span></h1>
+        <h2 class="typing-line">I'm a <span id="typed" class="typed"></span><span class="caret">|</span></h2>
+        <p class="hero-sub">
+          2nd year B.Tech Computer Science student at
+          <a href="https://shoolini.onlinedegreeadmission.in/" target="_blank" rel="noopener">Shoolini University</a>,
+          with a diploma in Computer Science &amp; Technology. I enjoy building websites, solving problems in code
+          and learning how things work under the hood.
+        </p>
+        <div class="hero-buttons">
+          <a href="#projects" class="btn btn-primary">View My Work</a>
+          <a href="#contact" class="btn btn-outline">Let's Talk</a>
+        </div>
+        <div class="socials">
+          <a href="https://github.com/debosmitajana55-droid" target="_blank" rel="noopener" aria-label="GitHub" title="GitHub">
+            <svg viewBox="0 0 24 24"><path d="M12 .5C5.7.5.5 5.7.5 12c0 5.1 3.3 9.4 7.9 10.9.6.1.8-.2.8-.6v-2c-3.2.7-3.9-1.5-3.9-1.5-.5-1.3-1.3-1.7-1.3-1.7-1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.7-1.6-2.6-.3-5.3-1.3-5.3-5.7 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0C17.3 4.6 18.3 5 18.3 5c.7 1.6.2 2.8.1 3.1.8.8 1.2 1.8 1.2 3.1 0 4.4-2.7 5.4-5.3 5.7.4.4.8 1.1.8 2.2v3.2c0 .4.2.7.8.6 4.6-1.5 7.9-5.8 7.9-10.9C23.5 5.7 18.3.5 12 .5z"/></svg>
+          </a>
+          <a href="https://www.linkedin.com/in/debosmita-jana-bb4886383" target="_blank" rel="noopener" aria-label="LinkedIn" title="LinkedIn">
+            <svg viewBox="0 0 24 24"><path d="M20.4 20.5h-3.6v-5.6c0-1.3 0-3-1.8-3s-2.1 1.4-2.1 2.9v5.7H9.3V9h3.4v1.6h.1c.5-.9 1.6-1.8 3.4-1.8 3.6 0 4.3 2.4 4.3 5.5v6.2zM5.3 7.4a2.1 2.1 0 1 1 0-4.2 2.1 2.1 0 0 1 0 4.2zM7.1 20.5H3.5V9h3.6v11.5zM22.2 0H1.8C.8 0 0 .8 0 1.7v20.6c0 .9.8 1.7 1.8 1.7h20.4c1 0 1.8-.8 1.8-1.7V1.7C24 .8 23.2 0 22.2 0z"/></svg>
+          </a>
+          <a href="mailto:debosmitajana55@gmail.com" aria-label="Email" title="Email">
+            <svg viewBox="0 0 24 24"><path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 4.2-8 5-8-5V6l8 5 8-5v2.2z"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="hero-photo reveal">
+        <div class="photo-ring">
+          <img src="assets/profile.jpg" alt="Photo of Debosmita Jana" width="320" height="320" />
+        </div>
+        <div class="floating-badge badge-1">💻 B.Tech CSE</div>
+        <div class="floating-badge badge-2">🚀 Open to Internships</div>
+        <div class="floating-badge badge-3">🎓 Diploma in CST</div>
+      </div>
+
+      <a href="#about" class="scroll-down" aria-label="Scroll to about section"><span></span></a>
+    </section>
+
+    <!-- ============ ABOUT ============ -->
+    <section class="section" id="about">
+      <h2 class="section-title reveal"><span>01.</span> About Me</h2>
+      <div class="about-grid">
+        <div class="about-text reveal">
+          <p>
+            Hello! I'm <strong>Debosmita</strong>, from Haldia, West Bengal. I'm a Computer Science student
+            currently in the <strong>2nd year of B.Tech at Shoolini University</strong>, Himachal Pradesh,
+            which I joined through lateral entry after completing my diploma.
+          </p>
+          <p>
+            Before B.Tech, I studied a <strong>Diploma in Computer Science &amp; Technology</strong> at Global Institute of
+            Science &amp; Technology, Haldia. That's where I learnt programming in <strong>C, C++ and Python</strong>,
+            and worked on projects like a <strong>LAN-based examination system</strong>, database administration
+            and website design, and data dashboards in <strong>Power BI</strong>.
+          </p>
+          <p>
+            Right now I'm focusing on <strong>web development</strong> (HTML, CSS, JavaScript) and strengthening my
+            <strong>Data Structures &amp; Algorithms</strong>. I'm eager to learn, adapt and contribute to team projects,
+            and I'm open to internship opportunities.
+          </p>
+          <div class="about-info">
+            <div><span>🎓 Degree</span><p>B.Tech, Computer Science &amp; Engineering (2nd year)</p></div>
+            <div><span>🏫 University</span><p>Shoolini University, Solan</p></div>
+            <div><span>📍 Hometown</span><p>Haldia, West Bengal, India</p></div>
+            <div><span>🗣️ Languages</span><p>English, Hindi, Bengali</p></div>
+          </div>
+        </div>
+
+        <div class="stats reveal">
+          <div class="stat-card"><h3 class="counter" data-target="4">0</h3><p>Programming Languages</p></div>
+          <div class="stat-card"><h3 class="counter" data-target="4">0</h3><p>Projects Built</p></div>
+          <div class="stat-card"><h3 class="counter" data-target="3">0</h3><p>Years of Coding</p></div>
+          <div class="stat-card"><h3 class="counter" data-target="3">0</h3><p>Languages Spoken</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ SKILLS ============ -->
+    <section class="section" id="skills">
+      <h2 class="section-title reveal"><span>02.</span> Skills</h2>
+
+      <div class="skill-tabs reveal" role="tablist">
+        <button class="tab active" data-tab="languages" role="tab">Programming</button>
+        <button class="tab" data-tab="web" role="tab">Web Dev</button>
+        <button class="tab" data-tab="tools" role="tab">Tools &amp; Data</button>
+        <button class="tab" data-tab="core" role="tab">CS Core</button>
+      </div>
+
+      <div class="skill-panels reveal">
+        <div class="skill-panel active" id="languages">
+          <div class="skill"><div class="skill-head"><span>C</span><span>80%</span></div><div class="bar"><div class="fill" data-level="80"></div></div></div>
+          <div class="skill"><div class="skill-head"><span>C++</span><span>75%</span></div><div class="bar"><div class="fill" data-level="75"></div></div></div>
+          <div class="skill"><div class="skill-head"><span>Python</span><span>75%</span></div><div class="bar"><div class="fill" data-level="75"></div></div></div>
+          <div class="skill"><div class="skill-head"><span>JavaScript</span><span>65%</span></div><div class="bar"><div class="fill" data-level="65"></div></div></div>
+        </div>
+        <div class="skill-panel" id="web">
+          <div class="skill"><div class="skill-head"><span>HTML5</span><span>85%</span></div><div class="bar"><div class="fill" data-level="85"></div></div></div>
+          <div class="skill"><div class="skill-head"><span>CSS3</span><span>80%</span></div><div class="bar"><div class="fill" data-level="80"></div></div></div>
+          <div class="skill"><div class="skill-head"><span>JavaScript (DOM)</span><span>65%</span></div><div class="bar"><div class="fill" data-level="65"></div></div></div>
+          <div class="skill"><div class="skill-head"><span>Responsive Design</span><span>70%</span></div><div class="bar"><div class="fill" data-level="70"></div></div></div>
+        </div>
+        <div class="skill-panel" id="tools">
+          <div class="skill"><div class="skill-head"><span>Git &amp; GitHub</span><span>65%</span></div><div class="bar"><div class="fill" data-level="65"></div></div></div>
+          <div class="skill"><div class="skill-head"><span>Power BI</span><span>70%</span></div><div class="bar"><div class="fill" data-level="70"></div></div></div>
+          <div class="skill"><div class="skill-head"><span>Database / SQL</span><span>65%</span></div><div class="bar"><div class="fill" data-level="65"></div></div></div>
+          <div class="skill"><div class="skill-head"><span>MS PowerPoint (Presentations)</span><span>85%</span></div><div class="bar"><div class="fill" data-level="85"></div></div></div>
+        </div>
+        <div class="skill-panel" id="core">
+          <div class="skill"><div class="skill-head"><span>Data Structures &amp; Algorithms</span><span>65%</span></div><div class="bar"><div class="fill" data-level="65"></div></div></div>
+          <div class="skill"><div class="skill-head"><span>Object-Oriented Programming</span><span>70%</span></div><div class="bar"><div class="fill" data-level="70"></div></div></div>
+          <div class="skill"><div class="skill-head"><span>DBMS</span><span>65%</span></div><div class="bar"><div class="fill" data-level="65"></div></div></div>
+          <div class="skill"><div class="skill-head"><span>Computer Networks (LAN)</span><span>65%</span></div><div class="bar"><div class="fill" data-level="65"></div></div></div>
+        </div>
+      </div>
+
+      <div class="tech-cloud reveal">
+        <span>C</span><span>C++</span><span>Python</span><span>JavaScript</span><span>HTML</span><span>CSS</span>
+        <span>Git</span><span>GitHub</span><span>SQL</span><span>Power BI</span><span>VS Code</span><span>LAN / Networking</span>
+      </div>
+    </section>
+
+    <!-- ============ PROJECTS ============ -->
+    <section class="section" id="projects">
+      <h2 class="section-title reveal"><span>03.</span> Projects</h2>
+      <p class="section-sub reveal">A selection of things I've built while learning. Click a card to see details.</p>
+
+      <div class="filters reveal">
+        <button class="filter active" data-filter="all">All</button>
+        <button class="filter" data-filter="web">Web</button>
+        <button class="filter" data-filter="systems">Systems &amp; Networking</button>
+        <button class="filter" data-filter="data">Data</button>
+      </div>
+
+      <div class="project-grid" id="projectGrid"><!-- filled by js/script.js --></div>
+
+      <!-- Live demo: sorting visualizer -->
+      <div class="demo reveal" id="demo">
+        <div class="demo-head">
+          <div>
+            <h3>⚡ Live Demo: Sorting Visualizer</h3>
+            <p>Built into this portfolio to practise DSA. Pick an algorithm and press Sort.</p>
+          </div>
+          <div class="demo-controls">
+            <select id="algo" aria-label="Choose sorting algorithm">
+              <option value="bubble">Bubble Sort</option>
+              <option value="selection">Selection Sort</option>
+              <option value="insertion">Insertion Sort</option>
+              <option value="merge">Merge Sort</option>
+              <option value="quick">Quick Sort</option>
+            </select>
+            <label class="speed">Speed <input type="range" id="speed" min="1" max="100" value="60" /></label>
+            <button class="btn btn-outline small" id="shuffleBtn">Shuffle</button>
+            <button class="btn btn-primary small" id="sortBtn">Sort ▶</button>
+          </div>
+        </div>
+        <div class="bars" id="bars"></div>
+        <div class="demo-stats">
+          <span>Comparisons: <b id="cmpCount">0</b></span>
+          <span>Swaps / writes: <b id="swapCount">0</b></span>
+          <span id="complexity">Time: O(n²) · Space: O(1)</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ JOURNEY ============ -->
+    <section class="section" id="journey">
+      <h2 class="section-title reveal"><span>04.</span> Education &amp; Journey</h2>
+      <div class="timeline">
+        <div class="tl-item reveal">
+          <div class="tl-dot"></div>
+          <div class="tl-card">
+            <span class="tl-date">2026 – Present</span>
+            <h3>B.Tech in Computer Science &amp; Engineering (Lateral Entry, 2nd Year)</h3>
+            <p class="tl-org">Shoolini University, Solan, Himachal Pradesh</p>
+            <p>Joined directly in the 2nd year after my diploma. Currently studying core CS subjects and building web projects.</p>
+          </div>
+        </div>
+        <div class="tl-item reveal">
+          <div class="tl-dot"></div>
+          <div class="tl-card">
+            <span class="tl-date">2023 – 2026</span>
+            <h3>Diploma in Computer Science &amp; Technology</h3>
+            <p class="tl-org">Global Institute of Science &amp; Technology, Haldia</p>
+            <p>Learnt programming in C, C++ and Python. Projects: LAN-based examination system, database administration &amp; website design, and Power BI dashboards.</p>
+          </div>
+        </div>
+        <div class="tl-item reveal">
+          <div class="tl-dot"></div>
+          <div class="tl-card">
+            <span class="tl-date">2023</span>
+            <h3>Madhyamik (Class X): 72%</h3>
+            <p class="tl-org">DAV Public School, Haldia</p>
+            <p>Completed secondary education and chose computer science as my path.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CONTACT ============ -->
+    <section class="section" id="contact">
+      <h2 class="section-title reveal"><span>05.</span> Get In Touch</h2>
+      <p class="section-sub reveal">Have an internship opportunity, a project idea, or just want to say hi? My inbox is open.</p>
+
+      <div class="contact-grid">
+        <div class="contact-cards reveal">
+          <a class="contact-card" href="mailto:debosmitajana55@gmail.com">
+            <span class="cc-icon">📧</span>
+            <div><h4>Email</h4><p>debosmitajana55@gmail.com</p></div>
+          </a>
+          <a class="contact-card" href="https://www.linkedin.com/in/debosmita-jana-bb4886383" target="_blank" rel="noopener">
+            <span class="cc-icon">💼</span>
+            <div><h4>LinkedIn</h4><p>linkedin.com/in/debosmita-jana-bb4886383</p></div>
+          </a>
+          <a class="contact-card" href="https://github.com/debosmitajana55-droid" target="_blank" rel="noopener">
+            <span class="cc-icon">🐙</span>
+            <div><h4>GitHub</h4><p>github.com/debosmitajana55-droid</p></div>
+          </a>
+          <div class="contact-card">
+            <span class="cc-icon">📍</span>
+            <div><h4>Location</h4><p>Solan, Himachal Pradesh · Haldia, West Bengal</p></div>
+          </div>
+        </div>
+
+        <form class="contact-form reveal" id="contactForm" novalidate>
+          <div class="field">
+            <input type="text" id="name" name="name" placeholder=" " required />
+            <label for="name">Your Name</label>
+            <small class="error"></small>
+          </div>
+          <div class="field">
+            <input type="email" id="email" name="email" placeholder=" " required />
+            <label for="email">Your Email</label>
+            <small class="error"></small>
+          </div>
+          <div class="field">
+            <input type="text" id="subject" name="subject" placeholder=" " />
+            <label for="subject">Subject</label>
+            <small class="error"></small>
+          </div>
+          <div class="field">
+            <textarea id="message" name="message" rows="5" placeholder=" " required></textarea>
+            <label for="message">Your Message</label>
+            <small class="error"></small>
+          </div>
+          <button type="submit" class="btn btn-primary full">Send Message ✉️</button>
+          <p class="form-note">Opens your email app with the message pre-filled.</p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer">
+    <p>Designed &amp; built with ❤️ by <strong>Debosmita Jana</strong> · © <span id="year"></span></p>
+    <p class="footer-sub">HTML · CSS · Vanilla JavaScript · Hosted on GitHub Pages</p>
+  </footer>
+
+  <button class="back-to-top" id="backToTop" aria-label="Back to top">↑</button>
+
+  <!-- Project modal -->
+  <div class="modal" id="modal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="modal-box">
+      <button class="modal-close" id="modalClose" aria-label="Close">×</button>
+      <div class="modal-emoji" id="modalEmoji"></div>
+      <h3 id="modalTitle"></h3>
+      <p id="modalDesc"></p>
+      <h4>Key features</h4>
+      <ul id="modalFeatures"></ul>
+      <h4>What I learned</h4>
+      <p id="modalLearned"></p>
+      <div class="tags" id="modalTags"></div>
+      <div class="modal-links" id="modalLinks"></div>
+    </div>
+  </div>
+
+  <div class="toast" id="toast"></div>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
