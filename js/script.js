@@ -18,7 +18,6 @@ const projects = [
       "Dark / light theme that remembers your choice",
       "Typing animation, scroll-reveal effects and animated skill bars",
       "Project filters and detail pop-ups generated from a JavaScript array",
-      "Built-in sorting algorithm visualizer (Bubble, Selection, Insertion, Merge, Quick)",
       "Validated contact form and a mobile-friendly layout",
     ],
     learned: "Semantic HTML, CSS Flexbox/Grid and media queries, DOM events in JavaScript, and deploying a site with GitHub Pages.",
@@ -312,120 +311,6 @@ form.addEventListener("submit", (e) => {
   toast("✅ Opening your email app…");
   form.reset();
 });
-
-/* ---------- Sorting visualizer ---------- */
-const barsEl = $("#bars");
-const cmpEl = $("#cmpCount");
-const swapEl = $("#swapCount");
-const sortBtn = $("#sortBtn");
-const shuffleBtn = $("#shuffleBtn");
-const algoSel = $("#algo");
-const speedEl = $("#speed");
-const complexity = {
-  bubble: "Time: O(n²) · Space: O(1)",
-  selection: "Time: O(n²) · Space: O(1)",
-  insertion: "Time: O(n²) · Space: O(1)",
-  merge: "Time: O(n log n) · Space: O(n)",
-  quick: "Time: O(n log n) avg · Space: O(log n)",
-};
-let arr = [], bars = [], running = false, cmp = 0, swaps = 0;
-const N = () => (window.innerWidth < 600 ? 28 : 50);
-
-function shuffle() {
-  arr = Array.from({ length: N() }, () => Math.floor(Math.random() * 92) + 8);
-  barsEl.innerHTML = arr.map((v) => `<div style="height:${v}%"></div>`).join("");
-  bars = $$("div", barsEl);
-  cmp = swaps = 0; updateStats();
-}
-const updateStats = () => { cmpEl.textContent = cmp; swapEl.textContent = swaps; };
-const delay = () => new Promise((r) => setTimeout(r, 105 - speedEl.value));
-const setH = (i) => { bars[i].style.height = `${arr[i]}%`; };
-async function compare(i, j) {
-  cmp++; updateStats();
-  bars[i].classList.add("compare"); bars[j].classList.add("compare");
-  await delay();
-  bars[i].classList.remove("compare"); bars[j].classList.remove("compare");
-  return arr[i] > arr[j];
-}
-async function swap(i, j) {
-  swaps++; updateStats();
-  [arr[i], arr[j]] = [arr[j], arr[i]];
-  bars[i].classList.add("swap"); bars[j].classList.add("swap");
-  setH(i); setH(j);
-  await delay();
-  bars[i].classList.remove("swap"); bars[j].classList.remove("swap");
-}
-async function write(i, v) {
-  swaps++; updateStats();
-  arr[i] = v; setH(i); bars[i].classList.add("swap");
-  await delay();
-  bars[i].classList.remove("swap");
-}
-
-const algorithms = {
-  async bubble() {
-    for (let i = 0; i < arr.length; i++) {
-      for (let j = 0; j < arr.length - i - 1; j++) if (await compare(j, j + 1)) await swap(j, j + 1);
-      bars[arr.length - i - 1].classList.add("sorted");
-    }
-  },
-  async selection() {
-    for (let i = 0; i < arr.length; i++) {
-      let min = i;
-      for (let j = i + 1; j < arr.length; j++) if (await compare(min, j)) min = j;
-      if (min !== i) await swap(i, min);
-      bars[i].classList.add("sorted");
-    }
-  },
-  async insertion() {
-    for (let i = 1; i < arr.length; i++) {
-      let j = i;
-      while (j > 0 && (await compare(j - 1, j))) { await swap(j - 1, j); j--; }
-    }
-  },
-  async merge(lo = 0, hi = arr.length - 1) {
-    if (lo >= hi) return;
-    const mid = (lo + hi) >> 1;
-    await algorithms.merge(lo, mid);
-    await algorithms.merge(mid + 1, hi);
-    const left = arr.slice(lo, mid + 1), right = arr.slice(mid + 1, hi + 1);
-    let i = 0, j = 0, k = lo;
-    while (i < left.length && j < right.length) {
-      cmp++; updateStats();
-      await write(k++, left[i] <= right[j] ? left[i++] : right[j++]);
-    }
-    while (i < left.length) await write(k++, left[i++]);
-    while (j < right.length) await write(k++, right[j++]);
-  },
-  async quick(lo = 0, hi = arr.length - 1) {
-    if (lo >= hi) return;
-    let p = lo;
-    for (let i = lo; i < hi; i++) if (!(await compare(i, hi))) { await swap(i, p); p++; }
-    await swap(p, hi);
-    await algorithms.quick(lo, p - 1);
-    await algorithms.quick(p + 1, hi);
-  },
-};
-
-async function finishAnimation() {
-  for (const b of bars) { b.classList.add("sorted"); await new Promise((r) => setTimeout(r, 12)); }
-}
-
-sortBtn.addEventListener("click", async () => {
-  if (running) return;
-  running = true;
-  sortBtn.disabled = shuffleBtn.disabled = algoSel.disabled = true;
-  bars.forEach((b) => b.classList.remove("sorted"));
-  cmp = swaps = 0; updateStats();
-  await algorithms[algoSel.value]();
-  await finishAnimation();
-  toast(`🎉 Sorted with ${algoSel.options[algoSel.selectedIndex].text}: ${cmp} comparisons`);
-  running = false;
-  sortBtn.disabled = shuffleBtn.disabled = algoSel.disabled = false;
-});
-shuffleBtn.addEventListener("click", () => !running && shuffle());
-algoSel.addEventListener("change", () => { $("#complexity").textContent = complexity[algoSel.value]; if (!running) shuffle(); });
-shuffle();
 
 /* ---------- Footer year ---------- */
 $("#year").textContent = new Date().getFullYear();
