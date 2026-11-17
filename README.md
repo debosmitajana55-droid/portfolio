@@ -16,7 +16,6 @@ A responsive, interactive personal portfolio website built from scratch with **H
 | **About** | Short bio, education details, animated stat counters |
 | **Skills** | Tabbed skill categories with animated progress bars, tech-stack tag cloud |
 | **Projects** | Project cards (portfolio, LAN-based examination system, database & website design, Power BI dashboard) with filters, 3D tilt on hover, and a detail pop-up for each |
-| **Live Demo** | A working **Sorting Algorithm Visualizer** (Bubble, Selection, Insertion, Merge, Quick) with speed control and comparison/swap counters |
 | **Journey** | Timeline: B.Tech (Shoolini University), Diploma (GIST Haldia), Madhyamik |
 | **Contact** | Contact cards + a validated contact form that opens the visitor's email app |
 
@@ -26,7 +25,7 @@ A responsive, interactive personal portfolio website built from scratch with **H
 
 - **HTML5**: semantic sections, accessible labels and ARIA attributes
 - **CSS3**: custom properties (theming), Flexbox, Grid, keyframe animations, media queries
-- **JavaScript (ES6+)**: DOM manipulation, IntersectionObserver, async/await animations, localStorage
+- **JavaScript (ES6+)**: DOM manipulation, IntersectionObserver, localStorage
 - **Google Fonts**: Poppins and JetBrains Mono
 - **GitHub Pages**: hosting
 

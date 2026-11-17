@@ -96,7 +96,7 @@ So the folder names (`css`, `js`, `assets`) must stay exactly the same, or the p
 | Hero | `home` | Name, typing animation, intro line, photo, social icons |
 | About | `about` | Bio, degree, university, location, CGPA, number counters |
 | Skills | `skills` | 4 tabs of skill bars + a cloud of tech names |
-| Projects | `projects` | Filter buttons, project cards (made by JS), sorting visualizer |
+| Projects | `projects` | Filter buttons and project cards (made by JS) |
 | Journey | `journey` | Timeline: B.Tech, hackathon, certifications, Class XII |
 | Contact | `contact` | Email/phone/LinkedIn/GitHub cards and a contact form |
 | Footer | (none) | Copyright line |
@@ -120,7 +120,6 @@ This is the order a developer normally follows. You can explain it this way in a
    - **Scroll effects:** `IntersectionObserver` notices when a section enters the screen and fades it in, starts the number counters and fills the skill bars.
    - **Project cards:** projects are stored as a list of objects (an *array*) at the top of `script.js`, and JS builds the cards from it. Adding a project = adding one object, no HTML needed.
    - **Filters and modal:** clicking a filter hides cards of other categories; clicking a card opens a pop-up with details.
-   - **Sorting visualizer:** real Bubble/Selection/Insertion/Merge/Quick sort code, slowed down with `async/await` so each comparison and swap can be drawn as coloured bars.
    - **Contact form:** checks the fields (name, valid email, message length) before opening the visitor's email app.
 5. **Test** on desktop and phone sizes, in dark and light mode.
 6. **Write the README** and **deploy** on GitHub Pages.
